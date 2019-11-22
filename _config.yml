@@ -1,0 +1,17 @@
+baseurl: /jekyll/
+author: 木子z
+
+# 插件
+plugins: [jekyll-paginate]
+
+# 分页
+paginate: 3
+#paginate_path: "blog/page:num"
+
+# 友链
+friend: [
+  {title: 'xxx', url: 'http://www.baidu.com'},
+  {title: 'ooo', url: 'http://www.jd.com'},
+  {title: 'lzl', url: 'https://www.lizelong.com'},
+  {title: 'taobao', url: 'http://www.taobao.com'},
+]

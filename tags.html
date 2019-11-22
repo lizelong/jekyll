@@ -1,0 +1,46 @@
+---
+layout: base
+---
+<style>
+    .tags_post{display:none;}
+</style>
+<!-- Main Content -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 mx-auto">
+      
+
+      {% for tag in site.tags%}
+        <div class="tags_post" id="{{tag[0]}}">
+            <h1>{{tag[0]}}</h1>
+          <!-- 文章列表开始 -->
+          {% for post in tag[1] %}
+          <div class="post-preview">
+            <a href="{{post.url}}">
+              <h2 class="post-title">{{post.title}}</h2>
+              <h3 class="post-subtitle">{{post.excerpt | strip_html | truncate:100}}</h3>
+            </a>
+            <p class="post-meta">Posted by <a href="#">{{post.author | default: site.author}}</a> on {{post.date | date_to_long_string}}</p>
+          </div>
+          <hr>
+          {% endfor %}
+          <!-- 文章列表结束 -->
+        </div>
+
+      {% endfor %}
+      
+      
+    </div>
+    
+    {% include aside.html %}
+  </div>
+</div>
+
+<hr>
+<script>
+    window.onload = function(){
+        var tag = location.href.split('?').pop();
+        $('#'+tag).css('display', 'block');
+        $('.site-heading h1').html('标签：'+tag);
+    }
+</script>

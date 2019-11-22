@@ -1,0 +1,24 @@
+<div class="offset-lg-1 col-lg-3 offset-md-1 col-md-3 col-sm-12 col-xs-12 sidebar-container">
+  <!-- Featured Tags -->
+  <section>
+    <hr class="hidden-sm hidden-xs">
+    <h5><a href="/tags/">标签</a></h5>
+    <div class="tags">
+      {% for tag in site.tags %}
+      <a href="{{site.baseurl}}tags.html?{{tag[0]}}" title="{{tag[0]}}">{{tag[0]}}({{tag[1]|size}})</a>
+      {% endfor %}
+    </div>
+  </section>
+  <!-- Friends Blog -->
+  <hr>
+  <h5>友情链接</h5>
+  <ul class="list-inline">
+
+    {% for f in site.friend %}
+    <li>
+      <a target="_blank" href="{{f.url}}">{{f.title}}</a>
+    </li>
+    {% endfor %}
+    
+  </ul>
+</div>

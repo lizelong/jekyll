@@ -1,0 +1,28 @@
+---
+layout: base
+---
+<!-- Post Content -->
+<article>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {{content}}
+      </div>
+    </div>
+
+    <div class="row">
+        <!-- Pager -->
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% if page.previous %}
+            <a class="btn btn-primary float-left" href="{{page.previous.url}}">上一篇： {{page.previous.title}}</a>
+            {% endif %}
+            
+            {% if page.next %}
+            <a class="btn btn-primary float-right" href="{{page.next.url}}">下一篇： {{page.next.title}}</a>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+</article>
+
+<hr>
